@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excel id="standardIndex-Hazard" code="standardIndex-Hazard" name="指标-危险源关联表模板">
+    <colgroup>
+        <col index="A" width='27em'></col>
+        <col index="B" width='27em'></col>
+        <col index="C" width='27em'></col>
+        <col index="D" width='27em'></col>    
+    </colgroup>
+    <thead>
+        <tr height="16px">
+            <th value="指标编号" />
+            <th value="指标名称" />  
+            <th value="危险源编号" />
+            <th value="危险源描述" />
+        </tr>
+    </thead>
+    <tbody>
+        <tr height="16px" firstrow="2" firstcol="0" repeat="1">
+            <td type="string" isnullable="false" maxlength="50" /><!--指标编号 -->
+            <td type="string" isnullable="false" maxlength="100" /><!--指标名称 -->
+            <td type="string" isnullable="false" maxlength="50" /><!--危险源编号 -->
+            <td type="string" isnullable="false" maxlength="300" /><!--危险源名称-->
+        </tr>
+    </tbody>
+</excel>

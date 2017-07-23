@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<excel id="manageObject" code="manageObject" name="管理对象模板">
+    <colgroup>
+        <col index="A" width='27em'></col>
+        <col index="B" width='27em'></col>
+        <col index="C" width='27em'></col>
+        <col index="D" width='27em'></col>
+        <col index="E" width='27em'></col>
+        <col index="F" width='27em'></col> 
+        <col index="G" width='27em'></col>   
+    </colgroup>
+    <thead>
+        <tr height="16px">
+        	<th value="部门类型编号" />
+        	<th value="部门类型名称" />
+            <th value="管理对象编号" />
+            <th value="管理对象名称" />
+            <th value="管理对象类型" />
+            <th value="父级管理对象编号" />
+            <th value="父级管理对象名称" />   
+        </tr>
+    </thead>
+    <tbody>
+        <tr height="16px" firstrow="2" firstcol="0" repeat="1">
+            <td type="string" isnullable="false" maxlength="50" /><!--所属部门类型编号 -->
+            <td type="string" isnullable="false" maxlength="50" /><!--所属部门类型名称 -->
+            <td type="string" isnullable="false" maxlength="50" /><!--管理对象编号 -->
+            <td type="string" isnullable="false" maxlength="50" /><!--管理对象名称 -->
+            <td type="enum" format="人,机,环,管" isnullable="false" /><!--管理对象类型 -->
+            <td type="string" isnullable="true" maxlength="30" /><!--父级管理对象编号 -->
+            <td type="string" isnullable="true" maxlength="30" /><!--父级管理对象名称 -->
+        </tr>
+    </tbody>
+</excel>

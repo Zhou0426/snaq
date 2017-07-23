@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excel id="hazard" code="hazard" name="危险源模板">
+    <colgroup>
+        <col index="A" width='27em'></col>
+        <col index="B" width='27em'></col>
+        <col index="C" width='27em'></col>
+        <col index="D" width='27em'></col>
+        <col index="E" width='27em'></col>  
+        <col index="F" width='27em'></col>
+        <col index="G" width='27em'></col>
+        <col index="H" width='27em'></col>     
+    </colgroup>
+    <thead>
+        <tr height="16px">
+        	<th value="部门类型编号" />
+        	<th value="部门类型名称" />
+            <th value="危险源编号" />
+            <th value="危险源描述" />
+            <th value="危险源后果描述" />
+            <th value="风险等级" />   
+            <th value="事故类型编号" /> 
+            <th value="事故类型名称" />    
+        </tr>
+    </thead>
+    <tbody>
+        <tr height="16px" firstrow="2" firstcol="0" repeat="1">
+            <td type="string" isnullable="false" maxlength="50" /><!--所属部门类型编号 -->
+            <td type="string" isnullable="false" maxlength="50" /><!--所属部门类型名称 -->
+            <td type="string" isnullable="false" maxlength="50" /><!--危险源编号 -->
+            <td type="string" isnullable="false" maxlength="300" /><!--危险源名称-->
+            <td type="string" isnullable="false" maxlength="300" /><!--危险源后果描述 -->
+            <td type="enum" format="一般风险,中等风险,重大风险" isnullable="false" /><!--风险等级 -->
+            <td type="string" isnullable="true" maxlength="30" /><!--事故类型编号 -->
+            <td type="string" isnullable="true" maxlength="30" /><!--事故类型名称 -->
+        </tr>
+    </tbody>
+</excel>

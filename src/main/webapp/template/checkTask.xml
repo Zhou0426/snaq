@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excel id="checkTask" code="checkTask" name="任务分配表模板">
+    <colgroup>
+        <col index="A" width='27em'></col>
+        <col index="B" width='27em'></col>
+        <col index="C" width='27em'></col>
+        <col index="D" width='27em'></col>  
+        <col index="E" width='27em'></col>   
+        <col index="F" width='27em'></col>  
+        <col index="G" width='27em'></col>  
+    </colgroup>
+    <thead>
+        <tr height="16px">
+            <th value="部门编号" />
+            <th value="部门名称" />  
+            <th value="人员编号" />
+            <th value="人员姓名" />
+            <th value="时间" />
+            <th value="隐患检查数量" />
+            <th value="不安全行为检查数量" />
+        </tr>
+    </thead>
+    <tbody>
+        <tr height="16px" firstrow="2" firstcol="0" repeat="1">
+            <td type="string" isnullable="false" maxlength="50" /><!--部门编号 -->
+            <td type="string" isnullable="false" maxlength="100" /><!--部门名称 -->
+            <td type="string" isnullable="false" maxlength="50" /><!--人员编号 -->
+            <td type="string" isnullable="false" maxlength="100" /><!--人员姓名-->
+            <td type="string" isnullable="false" maxlength="100" /><!--时间-->
+            <td type="string" isnullable="false" maxlength="50" /><!--检查任务数量-->
+            <td type="string" isnullable="false" maxlength="50" /><!--检查任务数量-->
+        </tr>
+    </tbody>
+</excel>

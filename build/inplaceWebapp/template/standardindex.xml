@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excel id="student" code="student">
+    <colgroup>
+        <col index="A" width='17em' name="indexSn" type="string"></col>
+        <col index="B" width='50em' name="indexName" type="string"></col>
+        <col index="C" width='50em' type="string" name="auditMethod"></col>
+        <col index="D" width='30em' type="string" name="specialitySn"></col>
+        <col index="E" width='30em' type="string" name="specialityName"></col>
+        <col index="F" width='10em' type="float" format="####.##" name="percentageScore"></col>
+        <col index="G" width='15em' type="boolean" format="true,false" name="isKeyIndex"></col>
+        <col index="H" width='10em' type="float" format="####.##" name="anDeduction"></col>
+        <col index="I" width='10em' type="int" format="###" name="zeroTimes"></col>
+        <col index="J" width='17em' name="parentindexSn" type="string"></col>
+        <col index="J" width='27em' name="jointIndexIdCode" type="string"></col>     
+    </colgroup>
+    <title>
+        <tr height="16px">
+            <td rowspan="1" colspan="11" value="评分标准导入模板（前五行为标准格式，如行数不够下拉复制即可）"/>
+        </tr>
+    </title>
+    <thead>
+        <tr height="16px">
+        	<th value="指标编号" />
+            <th value="指标名称" />
+            <th value="审核方法（不同方法‘#’隔开，若为关键指标扣分项，且需要扣父级分数时，格式如下：方法一$所扣父级指标编号$所扣分数#方法二#方法三...）"/>
+            <th value="专业编号（不同编号‘#’隔开）"/>
+            <th value="专业名称（不同编号‘#’隔开）"/>
+            <th value="百分制分数"/>  
+            <th value="是否关键指标"/>  
+            <th value="单次扣分"/>  
+            <th value="几次扣完"/>
+            <th value="父级编号"/>
+            <th value="共享指标标识码（必须填本组共享指标中第一条指标的编号）"/>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr height="16px" firstrow="2" firstcol="0" repeat="5">
+            <td type="string" isnullable="false" name="indexSn"/><!--指标编号 -->
+            <td type="string" isnullable="true" name="indexName"/><!--指标名称 -->
+            <td type="string" isnullable="true" name="auditMethod"/><!--审核方法 -->
+            <td type="string" isnullable="true" name="specialitySn"/><!--专业编号 -->
+            <td type="string" isnullable="true" name="specialityName"/><!--专业名称 -->
+            <td type="float" format="####.##" isnullable="true" name="percentageScore"/><!--百分制分数 -->
+            <td type="enum" format="是,否" isnullable="true" name="isKeyIndex"/><!--是否关键指标 -->
+            <td type="float" format="####.##" isnullable="true" name="anDeduction"/><!--单次扣分 -->          
+            <td type="int" format="###" isnullable="true" name="zeroTimes"/><!--几次扣完 -->
+            <td type="string" isnullable="true" name="parentindexSn"/><!--指标编号 -->
+            <td type="string" isnullable="true" name="jointIndexIdCode"/><!--共享编号 -->
+        </tr>
+    </tbody>
+</excel>

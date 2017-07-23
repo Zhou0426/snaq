@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+	<!-- 模块使用统计 -->
+	<package name="moduleStatistics" namespace="/module" extends="snaq-struts" strict-method-invocation="false">
+			<action name="moduleStatisticsAction_*" class="cn.jagl.aq.action.ModuleStatisticsAction" method="{1}">
+						<!-- 配置类型的json的Result -->
+					<result name="success" type="json">
+							<!-- 为该Result指定参数 -->
+							<param name="noCache">true</param>
+							<param name="contentType">text/html</param>
+							<!-- 设置只序列Action的map属性 -->		
+							<param name="root">jsonarray</param>
+					</result>
+			</action>
+    </package>
+    <!-- 部门使用统计 -->
+	<package name="department-use-stat" namespace="/departmentUseStat" extends="snaq-struts" strict-method-invocation="false">
+		<action name="*"  class="cn.jagl.aq.action.DepartmentUseStatAction" method="{1}">
+			<result type="json">
+				<!-- 为该Result指定参数 -->
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>	
+	</package>
+    <package name="person-use-stat" namespace="/personUseStat" extends="snaq-struts" strict-method-invocation="false">
+		<action name="*"  class="cn.jagl.aq.action.PersonUseStatAction" method="{1}">
+			<result type="json">
+				<!-- 为该Result指定参数 -->
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>	
+	</package>
+	<package name="use-stat" namespace="/use/statistics" extends="struts-default" strict-method-invocation="false">
+		<action name="*">
+			<result>/WEB-INF/view/usestat/{1}.jsp</result>			
+		</action>  
+	</package>
+</struts>

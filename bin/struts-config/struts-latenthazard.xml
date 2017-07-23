@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="latenthazardAction" namespace="/latenthazard" extends="snaq-struts" strict-method-invocation="false">
+			<action name="latenthazardAction_*" class="cn.jagl.aq.action.LatentHazardAction" method="{1}">
+					<!-- 配置类型的json的Result -->
+					<result name="success" type="json">
+							<!-- 为该Result指定参数 -->
+							<param name="noCache">true</param>
+							<param name="contentType">text/html</param>
+							<!-- 设置只序列Action的map属性 -->		
+							<param name="root">jsonObject</param>
+					</result>
+					<result name="jsonArray" type="json">
+							<!-- 为该Result指定参数 -->
+							<param name="noCache">true</param>
+							<param name="contentType">text/html</param>
+							<!-- 设置只序列Action的map属性 -->		
+							<param name="root">jsonArray</param>
+					</result>
+			</action>
+			<!-- 文件下载 -->
+			<action name="download_*" class="cn.jagl.aq.action.LatentHazardAction" method="{1}">
+				<result name="success" type="stream">
+	       				<param name="contentType">application/vnd.ms-excel</param> 
+                		<param name="inputName">fileStream</param>  
+                		<param name="contentDisposition">attachment;filename=${fileName}</param>  
+                		<param name="bufferSize">4096</param>
+	       		</result>			
+			</action>
+    </package>
+    <package name="latenthazard" namespace="/latenthazard" extends="snaq-struts" strict-method-invocation="false">        
+        <action name="*">
+			<result>/WEB-INF/view/latent-hazard/{1}.jsp</result>
+		</action>
+    </package>
+</struts>

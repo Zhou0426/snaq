@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="system-audit" namespace="/system/audit" extends="snaq-struts" strict-method-invocation="false">
+		<action name="systemauditAction_*" class="cn.jagl.aq.action.SystemAuditAction" method="{1}">
+			<result name="success" type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+				<!-- 设置只序列Action的map属性 -->		
+				<param name="root">map</param>
+			</result>
+			<result name="jsonList" type="json">
+				<!-- 为该Result指定参数 -->
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+				<!-- 设置只序列Action的map属性 -->		
+				<param name="root">map</param>
+			</result>
+			<result type="stream" name="DI">
+				<param name="contentType">application/vnd.ms-excel</param> 
+                <param name="inputName">excelStream</param>  
+                <param name="contentDisposition">attachment;filename=${excelFileName}</param>  
+                <param name="bufferSize">4096</param> 
+            </result>
+		</action>
+		<action name="systemScoreAction_*" class="cn.jagl.aq.action.SystemAuditScoreAction" method="{1}">
+			<result name="success" type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+				<!-- 设置只序列Action的map属性 -->		
+				<param name="root">map</param>
+			</result>		
+		</action>
+		<action name="systemScoreDetailsAction_*" class="cn.jagl.aq.action.SystemAuditScoreDetailsAction" method="{1}">
+			<result name="jsonObject" type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+				<!-- 设置只序列Action的map属性 -->		
+				<param name="root">jsonObject</param>
+			</result>	
+			<result name="jsonArray" type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+				<!-- 设置只序列Action的map属性 -->		
+				<param name="root">jsonArray</param>
+			</result>
+			<result name="b" type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+				<!-- 设置只序列Action的map属性 -->		
+				<param name="root">b</param>
+			</result>	
+		</action>
+		<action name="systemAuditAttachmentAction_*" class="cn.jagl.aq.action.SystemAuditAttachmentAction" method="{1}">
+			<result name="jsonObject" type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+				<!-- 设置只序列Action的map属性 -->		
+				<param name="root">jsonObject</param>
+			</result>	
+			<result name="jsonArray" type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+				<!-- 设置只序列Action的map属性 -->		
+				<param name="root">jsonArray</param>
+			</result>
+		</action>
+		<action name="*">
+			<result>/WEB-INF/view/system-audit/{1}.jsp</result>
+		</action>
+	</package>
+</struts>
